@@ -1,0 +1,63 @@
+<div class=add-wrap>
+    <div nz-form class="add-from">
+        <!-- ICO项目 -->
+        <div nz-form-item>
+            <div nz-form-control>
+                <nz-select [nzPlaceHolder]="'选择ICO项目'" [(ngModel)]="ICOObj" nzAllowClear class="add-selected">
+                    <nz-option *ngFor="let item of ICOList" [nzValue]="item.objectId" [nzLabel]="item.ICOName">{{ item.ICOName }}</nz-option>
+                </nz-select>
+                <!-- <div nz-form-explain *ngIf="">Please input your username!</div> -->
+            </div>
+        </div>
+
+        <!-- 用户昵称 -->
+        <div nz-form-item>
+            <div nz-form-control>
+                <nz-input [nzPlaceHolder]="'用户昵称'" [(ngModel)]="userName" [nzSize]="'large'">
+                    <ng-template #prefix>
+                        <i class="anticon anticon-lock"></i>
+                    </ng-template>
+                </nz-input>
+                <!-- <div nz-form-explain *ngIf="">Please input your Password!</div> -->
+            </div>
+        </div>
+
+        <!-- 用户微信 -->
+        <div nz-form-item>
+            <div nz-form-control>
+                <nz-input [nzPlaceHolder]="'用户的微信'" [(ngModel)]="userWechat" [nzSize]="'large'">
+                    <ng-template #prefix>
+                        <i class="anticon anticon-lock"></i>
+                    </ng-template>
+                </nz-input>
+                <!-- <div nz-form-explain *ngIf="">Please input your Password!</div> -->
+            </div>
+        </div>
+
+        <!-- 用户投资的数量 -->
+        <div nz-form-item>
+            <div nz-form-control>
+                <nz-input [nzPlaceHolder]="'投资的数量'" [(ngModel)]="userNum" [nzSize]="'large'">
+                    <ng-template #prefix>
+                        <i class="anticon anticon-lock"></i>
+                    </ng-template>
+                </nz-input>
+                <!-- <div nz-form-explain *ngIf="">Please input your Password!</div> -->
+            </div>
+        </div>
+
+        <!-- 用户的钱包地址-->
+        <div nz-form-item>
+            <div nz-form-control>
+                <nz-input [nzPlaceHolder]="'钱包地址'" [(ngModel)]="userAddr" [nzSize]="'large'">
+                    <ng-template #prefix>
+                        <i class="anticon anticon-lock"></i>
+                    </ng-template>
+                </nz-input>
+                <!-- <div nz-form-explain *ngIf="">Please input your Password!</div> -->
+            </div>
+        </div>
+
+        <button nz-button [nzType]="'primary'" [nzSize]="'large'" class="add-submit" (click)="_submitForm()">添加</button>
+    </div>
+</div>

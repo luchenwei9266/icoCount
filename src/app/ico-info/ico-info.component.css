@@ -1,0 +1,20 @@
+.wrap {
+    height: 89vh;
+    width: 100%;
+    background-color: #fff;
+}
+
+.info-fiter {
+    width: 450px;
+    padding: 20px 0;
+    margin-left: 20px;
+}
+
+.info-selected {
+    width: 50%;
+    display: inline-block
+}
+
+.add-submit {
+    display: inline-block;
+}

@@ -1,0 +1,19 @@
+.add-wrap {
+    height: 89vh;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-from {
+    width: 400px;
+}
+
+.add-submit {
+    width: 100%;
+}
+
+.add-selected {
+    width: 100%;
+}

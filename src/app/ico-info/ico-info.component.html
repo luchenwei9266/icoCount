@@ -1,0 +1,39 @@
+<div class="wrap">
+    <div class="info-fiter">
+        <nz-select [nzPlaceHolder]="'选择ICO项目'" [(ngModel)]="ICOObj" nzAllowClear class="info-selected">
+            <nz-option *ngFor="let item of ICOList" [nzValue]="item.objectId" [nzLabel]="item.ICOName">{{ item.ICOName }}</nz-option>
+        </nz-select>
+        <button nz-button [nzType]="'primary'" class="add-submit" (click)="selectChange()">确认</button>
+    </div>
+
+    <nz-table #nzTable [nzPageSize]="10" (nzDataChange)="_displayDataChange($event)" (nzPageIndexChange)="_refreshStatus()" (nzPageSizeChange)="_refreshStatus()">
+        <thead nz-thead>
+            <tr>
+                <th nz-th nzCheckbox>
+                    <label nz-checkbox [(ngModel)]="_allChecked" [nzIndeterminate]="_indeterminate" (ngModelChange)="_checkAll($event)">
+              </label>
+                </th>
+                <th nz-th [nzWidth]="'16%'"><span>投资人</span></th>
+                <th nz-th [nzWidth]="'15%'"><span>投资的项目</span></th>
+                <th nz-th [nzWidth]="'14%'"><span>投资数量</span></th>
+                <th nz-th [nzWidth]="'15%'"><span>投资人的微信</span></th>
+                <th nz-th [nzWidth]="'20%'"><span>投资人的钱包地址</span></th>
+                <th nz-th [nzWidth]="'20%'"><span>投资的时间</span></th>
+            </tr>
+        </thead>
+        <tbody nz-tbody>
+            <tr nz-tbody-tr *ngFor="let data of ICOData">
+                <td nz-td nzCheckbox>
+                    <label nz-checkbox [(ngModel)]="data.checked" (ngModelChange)="_refreshStatus($event)">
+                    </label>
+                </td>
+                <td nz-td>{{data.name}}</td>
+                <td nz-td>{{data.ICOName}}</td>
+                <td nz-td>{{data.ICONum}}</td>
+                <td nz-td>{{data.userWechat}}</td>
+                <td nz-td>{{data.userAddr}}</td>
+                <td nz-td>{{data.createdAt}}</td>
+            </tr>
+        </tbody>
+    </nz-table>
+</div>

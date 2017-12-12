@@ -1,0 +1,42 @@
+<div class=add-wrap>
+    <div nz-form class="add-from">
+
+        <!-- ICO名称 -->
+        <div nz-form-item>
+            <div nz-form-control>
+                <nz-input [nzPlaceHolder]="'ICO项目名称'" [(ngModel)]="ICOName" [nzSize]="'large'">
+                    <ng-template #prefix>
+                        <i class="anticon anticon-lock"></i>
+                    </ng-template>
+                </nz-input>
+                <!-- <div nz-form-explain *ngIf="">Please input your Password!</div> -->
+            </div>
+        </div>
+
+        <!-- ICO比例 -->
+        <div nz-form-item>
+            <div nz-form-control>
+                <nz-input [nzPlaceHolder]="'ICO比例(1个ETH单位)'" [(ngModel)]="ICOProportion" [nzSize]="'large'">
+                    <ng-template #prefix>
+                        <i class="anticon anticon-lock"></i>
+                    </ng-template>
+                </nz-input>
+                <!-- <div nz-form-explain *ngIf="">Please input your Password!</div> -->
+            </div>
+        </div>
+
+        <!-- ICO优惠额度 -->
+        <div nz-form-item>
+            <div nz-form-control>
+                <nz-input [nzPlaceHolder]="'优惠的额度'" [(ngModel)]="ICODiscount" [nzSize]="'large'">
+                    <ng-template #prefix>
+                        <i class="anticon anticon-lock"></i>
+                    </ng-template>
+                </nz-input>
+                <!-- <div nz-form-explain *ngIf="">Please input your Password!</div> -->
+            </div>
+        </div>
+
+        <button nz-button [nzType]="'primary'" [nzSize]="'large'" class="add-submit" (click)="_submitForm()">添加</button>
+    </div>
+</div>
